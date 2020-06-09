@@ -39,7 +39,7 @@ if (project.rootProject.file('local.properties').exists()) {
         siteUrl = 'https://github.com/iwillfailyou/java-plugin'
         gitUrl = 'https://github.com/iwillfailyou/java-plugin.git'
 
-        libraryVersion = '0.0.1'
+        libraryVersion = '0.0.2'
 
         developerId = 'nikialeksey'
         developerName = 'Alexey Nikitin'

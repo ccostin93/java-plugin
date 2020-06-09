@@ -1,7 +1,6 @@
 package com.iwillfailyou.plugin;
 
 import org.cactoos.Scalar;
-import org.cactoos.list.ListOf;
 import org.cactoos.list.Mapped;
 import org.cactoos.scalar.Solid;
 
@@ -23,7 +22,7 @@ public class IwfyPlugin implements Plugin {
     public IwfyPlugin(
         final Ui ui,
         final File root,
-        final Inspection... inspections
+        final List<Inspection> inspections
     ) {
         this(
             ui,
@@ -54,7 +53,7 @@ public class IwfyPlugin implements Plugin {
                 }
                 return files;
             }),
-            new ListOf<>(inspections)
+            inspections
         );
     }
 
