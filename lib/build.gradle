@@ -39,7 +39,7 @@ if (project.rootProject.file('local.properties').exists()) {
         siteUrl = 'https://github.com/iwillfailyou/java-plugin'
         gitUrl = 'https://github.com/iwillfailyou/java-plugin.git'
 
-        libraryVersion = '0.0.2'
+        libraryVersion = '0.0.3'
 
         developerId = 'nikialeksey'
         developerName = 'Alexey Nikitin'
@@ -139,9 +139,8 @@ if (project.rootProject.file('local.properties').exists()) {
             version {
                 desc = libraryDescription
                 gpg {
-                    sign = true //Determines whether to GPG sign the files. The default is false
+                    sign = true
                     passphrase = properties.getProperty("bintray.gpg.password")
-                    //Optional. The passphrase for GPG signing'
                 }
             }
         }

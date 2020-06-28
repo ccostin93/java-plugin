@@ -2,6 +2,7 @@ package com.iwillfailyou.plugin;
 
 import org.cactoos.Scalar;
 import org.cactoos.list.Mapped;
+import org.cactoos.map.MapEntry;
 import org.cactoos.scalar.Solid;
 
 import java.io.File;
@@ -13,6 +14,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class IwfyPlugin implements Plugin {
     private final Ui ui;
@@ -76,17 +78,21 @@ public class IwfyPlugin implements Plugin {
                 }
             }
         } catch (Exception e) {
-            throw new IwfyException("Could not check files. ", e);
+            throw new IwfyException("Could not inspect files. ", e);
         }
-        final List<Failures> failuresList = new Mapped<>(
-            Inspection::failures,
+        final List<Map.Entry<String, Failures>> failuresList = new Mapped<>(
+            inspection -> new MapEntry<>(
+                inspection.name(), inspection.failures()
+            ),
             inspections
         );
-        for (final Failures failures : failuresList) {
-            failures.show(ui);
+        for (final Map.Entry<String, Failures> failures : failuresList) {
+            ui.println(failures.getKey());
+            failures.getValue().show(ui);
+            ui.println("");
         }
-        for (final Failures failures : failuresList) {
-            failures.failIfRed();
+        for (final Map.Entry<String, Failures> failures : failuresList) {
+            failures.getValue().failIfRed();
         }
     }
 }

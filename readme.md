@@ -1,8 +1,9 @@
 # Iwillfailyou java plugin
 
-![Elegant Objects Respected Here](http://www.elegantobjects.org/badge.svg)
+![Elegant Objects Respected Here](https://www.elegantobjects.org/badge.svg)
 
 ![nullfree](https://iwillfailyou.com/nullfree/iwillfailyou/java-plugin)
+![staticfree](https://iwillfailyou.com/staticfree/iwillfailyou/java-plugin)
 
 [![Lib version](https://img.shields.io/maven-central/v/com.iwillfailyou/java-plugin.svg?label=maven)](https://maven-badges.herokuapp.com/maven-central/com.iwillfailyou/java-plugin)
 [![Build Status](https://travis-ci.com/iwillfailyou/java-plugin.svg?branch=master)](https://travis-ci.com/iwillfailyou/java-plugin)
