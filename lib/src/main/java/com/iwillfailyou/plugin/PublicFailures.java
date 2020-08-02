@@ -2,7 +2,7 @@ package com.iwillfailyou.plugin;
 
 import java.net.URL;
 
-public class PublicFailures implements Failures {
+public final class PublicFailures implements Failures {
 
     private final Urls urls;
     private final Failures origin;

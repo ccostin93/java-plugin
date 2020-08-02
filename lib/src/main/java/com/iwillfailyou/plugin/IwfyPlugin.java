@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class IwfyPlugin implements Plugin {
+public final class IwfyPlugin implements Plugin {
     private final Ui ui;
     private final Scalar<List<File>> files;
     private final List<Inspection> inspections;
@@ -44,7 +44,7 @@ public class IwfyPlugin implements Plugin {
                             }
                         }
                     );
-                } catch (IOException e) {
+                } catch (final IOException e) {
                     throw new IwfyException(
                         String.format(
                             "Could not enumerate files in the %s",
@@ -77,11 +77,11 @@ public class IwfyPlugin implements Plugin {
                     inspection.accept(file);
                 }
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new IwfyException("Could not inspect files. ", e);
         }
         final List<Map.Entry<String, Failures>> failuresList = new Mapped<>(
-            inspection -> new MapEntry<>(
+            (final Inspection inspection) -> new MapEntry<>(
                 inspection.name(), inspection.failures()
             ),
             inspections

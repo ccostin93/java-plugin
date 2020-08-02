@@ -7,7 +7,7 @@ import org.cactoos.text.UncheckedText;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class IwfyUrls implements Urls {
+public final class IwfyUrls implements Urls {
 
     private final Origin origin;
     private final String baseUrl;
@@ -34,7 +34,7 @@ public class IwfyUrls implements Urls {
                     )
                 ).asString()
             );
-        } catch (MalformedURLException e) {
+        } catch (final MalformedURLException e) {
             throw new IwfyException(
                 "Could not make the url for publishing failures.",
                 e

@@ -2,7 +2,7 @@ package com.iwillfailyou.plugin;
 
 import java.io.File;
 
-public class PublicInspection implements Inspection {
+public final class PublicInspection implements Inspection {
 
     private final Urls urls;
     private final Inspection origin;

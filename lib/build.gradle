@@ -39,7 +39,7 @@ if (project.rootProject.file('local.properties').exists()) {
         siteUrl = 'https://github.com/iwillfailyou/java-plugin'
         gitUrl = 'https://github.com/iwillfailyou/java-plugin.git'
 
-        libraryVersion = '0.0.3'
+        libraryVersion = '0.0.4'
 
         developerId = 'nikialeksey'
         developerName = 'Alexey Nikitin'
@@ -141,6 +141,11 @@ if (project.rootProject.file('local.properties').exists()) {
                 gpg {
                     sign = true
                     passphrase = properties.getProperty("bintray.gpg.password")
+                }
+                mavenCentralSync {
+                    sync = true
+                    user = properties.getProperty("bintray.sonatype.user")
+                    password = properties.getProperty("bintray.sonatype.pass")
                 }
             }
         }
